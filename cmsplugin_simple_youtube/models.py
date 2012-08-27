@@ -7,6 +7,7 @@ class SimpleYouTube(models.Model):
     name = models.CharField(_('name'), max_length=255, blank=False, null=False)
     video_id = models.CharField(_('video id'), max_length=60)
     autoplay = models.BooleanField(_('autoplay'),default=settings.CMS_SIMPLEYOUTUBE_AUTOPLAY)
+    custom_thumbnail = models.ImageField(upload_to='youtube_th', blank=True, null=True)
 
     def __unicode__(self):
         return u'%s' % (self.name,)
